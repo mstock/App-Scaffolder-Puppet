@@ -1,0 +1,16 @@
+#
+# = Class: [% name %]::install
+#
+# Class to install [% name %].
+#
+class [% name %]::install (
+    $package = hiera('[% name %]::install::package', $[% name %]::params::package),
+) {
+    if $package {
+        package {
+            $package:
+                ensure => present,
+            ;
+        }
+    }
+}
