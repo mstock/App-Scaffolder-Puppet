@@ -3,6 +3,9 @@
 #
 # Class to install [% name %].
 #
+# == Parameters
+# <tt>package</tt>:: Name of the package.
+#
 class [% name %]::install (
     $package = hiera('[% name %]::install::package', $[% name %]::params::package),
 ) {
