@@ -17,7 +17,7 @@ use Directory::Scratch;
 use App::Scaffolder;
 use App::Scaffolder::Command::puppetmodule;
 
-sub app_test : Test(6) {
+sub app_test : Test(7) {
 	my ($self) = @_;
 
 	my $scratch = Directory::Scratch->new();
@@ -31,6 +31,7 @@ sub app_test : Test(6) {
 		manifests/install.pp
 		manifests/params.pp
 		tests/manifest.pp
+		.gitignore
 	);
 	for my $file (@files) {
 		file_exists_ok($scratch->base()->file($file));
