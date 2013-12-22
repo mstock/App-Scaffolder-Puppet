@@ -1,0 +1,21 @@
+#
+# = Class: [% name %]::service
+#
+# Class to setup the [% name %] service.
+#
+# == Parameters
+# <tt>service</tt>:: Name of the service.
+#
+class [% name %]::service (
+    $service = hiera('[% name %]::service::service', $[% name %]::params::service),
+) {
+    if $service {
+        service {
+            $service:
+                ensure     => running,
+                enable     => true,
+                hasrestart => true,
+            ;
+        }
+    }
+}

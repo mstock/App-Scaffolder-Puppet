@@ -1,0 +1,8 @@
+#
+# = Class: [% name %]::config
+#
+# Class to configure [% name %].
+#
+class [% name %]::config (
+) {
+}

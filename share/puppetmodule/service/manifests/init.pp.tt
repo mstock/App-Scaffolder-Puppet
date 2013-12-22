@@ -1,0 +1,29 @@
+#
+# = Class: [% name %]
+#
+# Class to install [% name %].
+#
+# == Parameters
+# <tt>package</tt>:: Name of the package that provides [% name %]. If
+#                    <code>false</code>, no package installation will be
+#                    attempted.
+# <tt>service</tt>:: Name of the service that provides [% name %]. If
+#                    <code>false</code>, no service setup will be attempted.
+#
+class [% name %] (
+    $package = undef,
+    $service = undef,
+) inherits ::[% name %]::params {
+    class {
+        '::[% name %]::install':
+            package => $package,
+        ;
+    } -> class {
+        '::[% name %]::config':
+        ;
+    } ~> class {
+        '::[% name %]::service':
+            service => $service,
+        ;
+    }
+}
