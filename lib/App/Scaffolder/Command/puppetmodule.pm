@@ -92,6 +92,7 @@ sub validate_args {
 	unless ($self->contains_base_args($opt) || $opt->name()) {
 		$self->usage_error("Parameter 'name' required");
 	}
+	return;
 }
 
 1;
