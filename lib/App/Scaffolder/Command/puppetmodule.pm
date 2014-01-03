@@ -10,11 +10,25 @@ use MRO::Compat;
 
 =head1 SYNOPSIS
 
-	scaffolder puppetmodule --template package --name vim
+	$ scaffolder puppetmodule --template package --name vim
+	$ scaffolder puppetmodule --template service --name apache2
 
 =head1 DESCRIPTION
 
-App::Scaffolder::Command::puppetmodule scaffolds a Puppet module.
+App::Scaffolder::Command::puppetmodule scaffolds Puppet modules. By default, it
+provides two simple templates:
+
+=over
+
+=item *
+
+C<package>: Create Puppet module to install a package.
+
+=item *
+
+C<service>: Create Puppet module to setup a service.
+
+=back
 
 =head1 METHODS
 
