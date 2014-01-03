@@ -75,7 +75,7 @@ sub validate_args {
 	my ($self, $opt, $args) = @_;
 
 	$self->next::method($opt, $args);
-	unless ($opt->list() || $opt->name()) {
+	unless ($self->contains_base_args($opt) || $opt->name()) {
 		$self->usage_error("Parameter 'name' required");
 	}
 }
