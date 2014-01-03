@@ -30,7 +30,7 @@ sub app_test : Test(7) {
 		manifests/init.pp
 		manifests/install.pp
 		manifests/params.pp
-		tests/manifest.pp
+		tests/init.pp
 		.gitignore
 	);
 	for my $file (@files) {
