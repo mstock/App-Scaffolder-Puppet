@@ -10,7 +10,10 @@ use MRO::Compat;
 
 =head1 SYNOPSIS
 
+	# Create scaffold to install the 'vim' package:
 	$ scaffolder puppetmodule --template package --name vim
+
+	# Create scaffold to install the 'apache2' package and setup the corresponding service:
 	$ scaffolder puppetmodule --template service --name apache2
 
 =head1 DESCRIPTION
