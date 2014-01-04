@@ -98,5 +98,21 @@ sub validate_args {
 	return;
 }
 
+=head1 SEE ALSO
+
+=over
+
+=item *
+
+L<https://puppetlabs.com/puppet/puppet-open-source> - Puppet
+
+=item *
+
+L<http://docs.puppetlabs.com/puppet/2.7/reference/modules_fundamentals.html> - Module Fundamentals
+
+=back
+
+=cut
+
 1;
 
