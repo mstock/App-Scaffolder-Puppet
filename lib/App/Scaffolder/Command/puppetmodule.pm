@@ -34,6 +34,11 @@ C<service>: Create Puppet module to setup a service.
 
 =back
 
+In addition to the default template search path (see
+L<App::Scaffolder|App::Scaffolder> for details), this command will also look for
+templates in C</etc/puppet/scaffolder_templates> or
+C</usr/local/etc/puppet/scaffolder_templates> if they exist.
+
 =head1 METHODS
 
 =cut
@@ -98,6 +103,18 @@ sub validate_args {
 	}
 	return;
 }
+
+
+=head2 get_extra_template_dirs
+
+Extend the template search path with C</etc/puppet/scaffolder_templates> or
+C</usr/local/etc/puppet/scaffolder_templates> if they exist.
+
+=head3 Result
+
+The extended list with template directories.
+
+=cut
 
 sub get_extra_template_dirs {
 	my ($self, $command) = @_;
