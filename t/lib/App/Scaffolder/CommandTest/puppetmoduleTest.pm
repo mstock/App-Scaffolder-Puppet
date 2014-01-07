@@ -38,4 +38,20 @@ sub app_test : Test(7) {
 	}
 }
 
+
+sub get_extra_template_dirs_test : Test(2) {
+	my ($self) = @_;
+
+	my $sharedir = Path::Class::Dir->new(qw(share));
+	my $cmd = App::Scaffolder::Command::puppetmodule->new({});
+	local $ENV{SCAFFOLDER_TEMPLATE_PATH} = $sharedir->stringify();
+	my @template_dirs = $cmd->get_extra_template_dirs('puppetmodule');
+	cmp_ok(scalar @template_dirs, '>=', 1, 'at least one template dir found');
+	is(
+		scalar(grep { $_ eq $sharedir->subdir('puppetmodule')->stringify() } @template_dirs),
+		1,
+		'path from environment respected'
+	);
+}
+
 1;

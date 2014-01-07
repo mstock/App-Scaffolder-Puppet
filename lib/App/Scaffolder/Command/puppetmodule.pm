@@ -7,6 +7,7 @@ use strict;
 use warnings;
 
 use MRO::Compat;
+use Path::Class::Dir;
 
 =head1 SYNOPSIS
 
@@ -97,6 +98,22 @@ sub validate_args {
 	}
 	return;
 }
+
+sub get_extra_template_dirs {
+	my ($self, $command) = @_;
+
+	my $template_dir_name = 'scaffolder_templates';
+	my @extra_template_dirs = grep { -d $_ && -r $_ } (
+		Path::Class::Dir->new('', 'etc', 'puppet', $template_dir_name),
+		Path::Class::Dir->new('', 'usr', 'local', 'etc', 'puppet', $template_dir_name),
+	);
+
+	return (
+		$self->next::method($command),
+		@extra_template_dirs,
+	);
+}
+
 
 =head1 SEE ALSO
 
