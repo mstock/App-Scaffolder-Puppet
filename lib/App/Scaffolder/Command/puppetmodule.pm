@@ -89,7 +89,7 @@ Return additional options for this command.
 sub get_options {
 	my ($class) = @_;
 	return (
-		[ 'name=s' => 'Name of the new Puppet module that should be created' ],
+		[ 'name|n=s' => 'Name of the new Puppet module that should be created' ],
 	);
 }
 
