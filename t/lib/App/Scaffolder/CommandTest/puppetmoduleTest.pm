@@ -26,15 +26,15 @@ sub app_test : Test(7) {
 	]);
 	is($result->stdout(), '', 'no output');
 	is($result->error, undef, 'threw no exceptions');
-	my @files = qw(
-		manifests/init.pp
-		manifests/install.pp
-		manifests/params.pp
-		tests/init.pp
-		.gitignore
+	my @files = (
+		[qw(manifests init.pp)],
+		[qw(manifests install.pp)],
+		[qw(manifests params.pp)],
+		[qw(tests init.pp)],
+		[qw(.gitignore)],
 	);
 	for my $file (@files) {
-		file_exists_ok($scratch->base()->file($file));
+		file_exists_ok($scratch->base()->file(@{$file}));
 	}
 }
 
