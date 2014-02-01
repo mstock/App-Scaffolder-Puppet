@@ -2,6 +2,10 @@ Revision history for App-Scaffolder-Puppet
 
 {{$NEXT}}
 
+ - Add --quiet option in test to avoid output
+ - Make tests more robust on platforms that don't necessarily use '/' as
+   directory/file separator
+
 0.001000  2014-01-18 16:25:52 Europe/Zurich
 
  - Initial release
