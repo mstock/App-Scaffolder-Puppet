@@ -22,7 +22,7 @@ sub app_test : Test(7) {
 
 	my $scratch = Directory::Scratch->new();
 	my $result = test_app('App::Scaffolder' => [
-		qw(puppetmodule --name vim --template package --target), $scratch->base()
+		qw(puppetmodule --name vim --template package --quiet --target), $scratch->base()
 	]);
 	is($result->stdout(), '', 'no output');
 	is($result->error, undef, 'threw no exceptions');
