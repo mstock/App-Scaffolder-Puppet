@@ -29,8 +29,15 @@
             "Module::Build" : "0.3601"
          }
       },
+      "develop" : {
+         "requires" : {
+            "Test::CPAN::Changes" : "0.19",
+            "version" : "0.9901"
+         }
+      },
       "runtime" : {
          "requires" : {
+            "App::Scaffolder" : "0.002000",
             "App::Scaffolder::Command" : "0",
             "MRO::Compat" : "0",
             "Path::Class::Dir" : "0",
@@ -51,7 +58,7 @@
             "Test::Exception" : "0",
             "Test::File" : "0",
             "Test::File::ShareDir" : "0",
-            "Test::More" : "0"
+            "Test::More" : "0.88"
          }
       }
    },
@@ -63,6 +70,6 @@
          "web" : "https://github.com/mstock/App-Scaffolder-Puppet"
       }
    },
-   "version" : "0.001000"
+   "version" : "0.001001"
 }
 

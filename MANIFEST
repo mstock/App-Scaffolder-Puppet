@@ -21,6 +21,7 @@ share/puppetmodule/service/manifests/params.pp.tt
 share/puppetmodule/service/manifests/service.pp.tt
 share/puppetmodule/service/tests/init.pp.tt
 t/00-compile.t
+t/000-report-versions-tiny.t
 t/app.scaffolder.command.puppetmodule.t
 t/app.scaffolder.puppet.t
 t/author-critic.t

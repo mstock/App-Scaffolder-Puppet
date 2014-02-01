@@ -18,7 +18,7 @@ my %module_build_args = (
     "Test::Exception" => 0,
     "Test::File" => 0,
     "Test::File::ShareDir" => 0,
-    "Test::More" => 0
+    "Test::More" => "0.88"
   },
   "configure_requires" => {
     "Module::Build" => "0.3601"
@@ -28,12 +28,13 @@ my %module_build_args = (
     "Manfred Stock <mstock\@cpan.org>"
   ],
   "dist_name" => "App-Scaffolder-Puppet",
-  "dist_version" => "0.001000",
+  "dist_version" => "0.001001",
   "license" => "perl",
   "module_name" => "App::Scaffolder::Puppet",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
+    "App::Scaffolder" => "0.002000",
     "App::Scaffolder::Command" => 0,
     "MRO::Compat" => 0,
     "Path::Class::Dir" => 0,
