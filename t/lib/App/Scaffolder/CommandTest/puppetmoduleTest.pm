@@ -77,6 +77,22 @@ sub get_extra_template_dirs_test : Test(2) {
 }
 
 
+sub get_target_test : Test(3) {
+	my ($self) = @_;
+
+	my $cmd = App::Scaffolder::Command::puppetmodule->new({});
+
+	$self->{name_opt} = 'foo';
+	is($cmd->get_target($self->{opt_mock}), 'foo', 'target ok');
+
+	$self->{name_opt} = 'foo::bar';
+	is($cmd->get_target($self->{opt_mock}), '.', 'target ok');
+
+	$self->{target_opt} = 'test/dir';
+	is($cmd->get_target($self->{opt_mock}), 'test/dir', 'target parameter overrides');
+}
+
+
 sub get_variables_test : Test(3) {
 	my ($self) = @_;
 

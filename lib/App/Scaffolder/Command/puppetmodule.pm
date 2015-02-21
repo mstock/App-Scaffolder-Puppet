@@ -46,13 +46,20 @@ C</usr/local/etc/puppet/scaffolder_templates> if they exist.
 
 =head2 get_target
 
-Specialized C<get_target> version which uses the name if no target was given.
+Specialized C<get_target> version which uses the name (if it does not contain
+C<::>, otherwise, it will be the current working directory) if no target was
+given.
 
 =cut
 
 sub get_target {
 	my ($self, $opt) = @_;
-	return Path::Class::Dir->new($opt->target() || $opt->name());
+	my $target = $opt->target() || (
+		$opt->name() =~ m{::}x
+			? '.'
+			: $opt->name()
+	);
+	return Path::Class::Dir->new($target);
 }
 
 
