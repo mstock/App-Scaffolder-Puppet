@@ -2,6 +2,11 @@ Revision history for App-Scaffolder-Puppet
 
 {{$NEXT}}
 
+ - Add --package option to provide package name, use package name where it
+   seems reasonable in existing templates
+ - Add 'subpackage' template
+ - Enhance some methods to better support the new 'subpackage' template
+
 0.001001  2014-02-01 16:54:57 Europe/Zurich
 
  - Add --quiet option in test to avoid output
