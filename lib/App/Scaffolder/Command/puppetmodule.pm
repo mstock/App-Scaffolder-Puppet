@@ -15,7 +15,7 @@ use Path::Class::Dir;
 	# Create scaffold to install the 'vim' package:
 	$ scaffolder puppetmodule --template package --name vim
 
-	# Create scaffold to install the 'vim-puppet' package in module create with above command:
+	# Create scaffold to install the 'vim-puppet' package in module created with above command:
 	$ scaffolder puppetmodule --template subpackage --name vim::puppet --package vim-puppet
 
 	# Create scaffold to install the 'apache2' package and setup the corresponding service:
