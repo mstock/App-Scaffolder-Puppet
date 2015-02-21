@@ -6,6 +6,7 @@ use parent qw(App::Scaffolder::Command);
 use strict;
 use warnings;
 
+use File::Spec::Functions qw(catfile);
 use MRO::Compat;
 use Path::Class::Dir;
 
@@ -57,14 +58,26 @@ sub get_target {
 
 =head2 get_variables
 
-Specialized C<get_variables> version which returns the name of the module.
+Specialized C<get_variables> version which returns the name of the module and
+other useful variables.
 
 =cut
 
 sub get_variables {
 	my ($self, $opt) = @_;
+
+	my @name_parts = split(/::/x, $opt->name());
+	my (undef, @subname_parts) = @name_parts;
+	my $package = $opt->package() || $opt->name();
 	return {
-		name => scalar $opt->name(),
+		name               => scalar $opt->name(),
+		nameparts          => \@name_parts,
+		namepartsjoined    => join('_', @name_parts),
+		namepartspath      => catfile(@name_parts),
+		subnameparts       => \@subname_parts,
+		subnamepartsjoined => join('_', @subname_parts),
+		subnamepartspath   => catfile(@subname_parts),
+		package            => $package,
 	};
 }
 
