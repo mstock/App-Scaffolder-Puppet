@@ -142,7 +142,7 @@ L<https://puppetlabs.com/puppet/puppet-open-source> - Puppet
 
 =item *
 
-L<http://docs.puppetlabs.com/puppet/2.7/reference/modules_fundamentals.html> - Module Fundamentals
+L<https://docs.puppetlabs.com/puppet/latest/reference/modules_fundamentals.html> - Module Fundamentals
 
 =back
 
