@@ -110,8 +110,10 @@ sub validate_args {
 
 =head2 get_extra_template_dirs
 
-Extend the template search path with C</etc/puppet/scaffolder_templates> or
-C</usr/local/etc/puppet/scaffolder_templates> if they exist.
+Extend the template search path with
+C</etc/puppet/scaffolder_templates/E<lt>command nameE<gt>> or
+C</usr/local/etc/puppet/scaffolder_templates/E<lt>command nameE<gt>> if they
+exist.
 
 =head3 Result
 
@@ -122,10 +124,10 @@ The extended list with template directories.
 sub get_extra_template_dirs {
 	my ($self, $command) = @_;
 
-	my $template_dir_name = 'scaffolder_templates';
+	my @sub_path = ('etc', 'puppet', 'scaffolder_templates', $command);
 	my @extra_template_dirs = grep { -d $_ && -r $_ } (
-		Path::Class::Dir->new('', 'etc', 'puppet', $template_dir_name),
-		Path::Class::Dir->new('', 'usr', 'local', 'etc', 'puppet', $template_dir_name),
+		Path::Class::Dir->new('', @sub_path),
+		Path::Class::Dir->new('', 'usr', 'local', @sub_path),
 	);
 
 	return (
