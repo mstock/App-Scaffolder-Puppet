@@ -39,6 +39,7 @@
          "requires" : {
             "App::Scaffolder" : "0.002000",
             "App::Scaffolder::Command" : "0",
+            "File::Spec::Functions" : "0",
             "MRO::Compat" : "0",
             "Path::Class::Dir" : "0",
             "parent" : "0",
@@ -58,6 +59,7 @@
             "Test::Exception" : "0",
             "Test::File" : "0",
             "Test::File::ShareDir" : "0",
+            "Test::MockObject" : "0",
             "Test::More" : "0.88"
          }
       }
@@ -70,6 +72,6 @@
          "web" : "https://github.com/mstock/App-Scaffolder-Puppet"
       }
    },
-   "version" : "0.001001"
+   "version" : "0.002000"
 }
 

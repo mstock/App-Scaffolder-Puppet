@@ -14,6 +14,7 @@ build_requires:
   Test::Exception: 0
   Test::File: 0
   Test::File::ShareDir: 0
+  Test::MockObject: 0
   Test::More: 0.88
 configure_requires:
   Module::Build: 0.3601
@@ -30,6 +31,7 @@ no_index:
 requires:
   App::Scaffolder: 0.002000
   App::Scaffolder::Command: 0
+  File::Spec::Functions: 0
   MRO::Compat: 0
   Path::Class::Dir: 0
   parent: 0
@@ -37,4 +39,4 @@ requires:
   warnings: 0
 resources:
   repository: git://github.com/mstock/App-Scaffolder-Puppet.git
-version: 0.001001
+version: 0.002000

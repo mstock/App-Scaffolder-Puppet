@@ -4,6 +4,6 @@
 # Parameter class for [% name %].
 #
 class [% name %]::params {
-    $package = '[% name %]'
+    $package = '[% package %]'
     $service = '[% name %]'
 }

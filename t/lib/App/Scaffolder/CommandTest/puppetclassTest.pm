@@ -1,4 +1,4 @@
-package App::Scaffolder::CommandTest::puppetmoduleTest;
+package App::Scaffolder::CommandTest::puppetclassTest;
 use parent qw(App::Scaffolder::Puppet::TestBase);
 
 use strict;
@@ -14,7 +14,7 @@ use Test::File::ShareDir '-share' => {
 };
 use Directory::Scratch;
 use App::Scaffolder;
-use App::Scaffolder::Command::puppetmodule;
+use App::Scaffolder::Command::puppetclass;
 
 
 sub app_test : Test(7) {
@@ -22,16 +22,21 @@ sub app_test : Test(7) {
 
 	my $scratch = Directory::Scratch->new();
 	my $result = test_app('App::Scaffolder' => [
-		qw(puppetmodule --name vim --template package --quiet --target), $scratch->base()
+		qw(
+			puppetclass
+			--name vim::puppet
+			--package vim-puppet
+			--template subpackage
+			--quiet
+			--target
+		), $scratch->base()
 	]);
 	is($result->stdout(), '', 'no output');
 	is($result->error, undef, 'threw no exceptions');
 	my @files = (
-		[qw(manifests init.pp)],
-		[qw(manifests install.pp)],
-		[qw(manifests params.pp)],
-		[qw(tests init.pp)],
-		[qw(.gitignore)],
+		[qw(manifests puppet.pp)],
+		[qw(manifests puppet install.pp)],
+		[qw(tests puppet.pp)],
 	);
 	for my $file (@files) {
 		file_exists_ok($scratch->base()->file(@{$file}));
