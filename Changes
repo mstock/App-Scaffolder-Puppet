@@ -2,6 +2,7 @@ Revision history for App-Scaffolder-Puppet
 
 {{$NEXT}}
 
+ - Add 'ensure' parameter to 'package' and 'service' templates
  - Add --package option to provide package name, use package name where it
    seems reasonable in existing templates
  - Add 'puppetclass' command to create single or related classes which don't
