@@ -6,7 +6,7 @@ use parent qw(App::Scaffolder::Command);
 use strict;
 use warnings;
 
-use File::Spec::Functions qw(catfile);
+use File::Spec::Functions qw(catdir);
 use MRO::Compat;
 use Path::Class::Dir;
 
@@ -61,10 +61,10 @@ sub get_variables {
 		name               => scalar $opt->name(),
 		nameparts          => \@name_parts,
 		namepartsjoined    => join('_', @name_parts),
-		namepartspath      => catfile(@name_parts),
+		namepartspath      => catdir(@name_parts),
 		subnameparts       => \@subname_parts,
 		subnamepartsjoined => join('_', @subname_parts),
-		subnamepartspath   => catfile(@subname_parts),
+		subnamepartspath   => catdir(@subname_parts),
 		package            => $package,
 	};
 }

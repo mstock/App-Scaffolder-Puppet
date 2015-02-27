@@ -7,7 +7,7 @@ use warnings;
 use Carp;
 use Test::More;
 use Test::Exception;
-use File::Spec::Functions qw(catfile);
+use File::Spec::Functions qw(catdir);
 use App::Scaffolder::Puppet::Command;
 
 sub get_extra_template_dirs_test : Test(2) {
@@ -37,8 +37,12 @@ sub get_target_test : Test(3) {
 	$self->{name_opt} = 'foo::bar';
 	is($cmd->get_target($self->{opt_mock}), '.', 'target ok');
 
-	$self->{target_opt} = 'test/dir';
-	is($cmd->get_target($self->{opt_mock}), 'test/dir', 'target parameter overrides');
+	$self->{target_opt} = catdir('test', 'dir');
+	is(
+		$cmd->get_target($self->{opt_mock}),
+		catdir('test', 'dir'),
+		'target parameter overrides'
+	);
 }
 
 
@@ -56,7 +60,7 @@ sub get_variables_test : Test(3) {
 		namepartspath      => 'foo',
 		subnameparts       => [],
 		subnamepartsjoined => '',
-		subnamepartspath   => undef,
+		subnamepartspath   => '',
 	}, 'variables ok');
 
 	$self->{name_opt} = 'foo::bar';
@@ -65,7 +69,7 @@ sub get_variables_test : Test(3) {
 		package            => 'foo::bar',
 		nameparts          => ['foo', 'bar'],
 		namepartsjoined    => 'foo_bar',
-		namepartspath      => catfile('foo', 'bar'),
+		namepartspath      => catdir('foo', 'bar'),
 		subnameparts       => ['bar'],
 		subnamepartsjoined => 'bar',
 		subnamepartspath   => 'bar',
@@ -78,10 +82,10 @@ sub get_variables_test : Test(3) {
 		package            => 'foo-bar-baz',
 		nameparts          => ['foo', 'bar', 'baz'],
 		namepartsjoined    => 'foo_bar_baz',
-		namepartspath      => catfile('foo', 'bar', 'baz'),
+		namepartspath      => catdir('foo', 'bar', 'baz'),
 		subnameparts       => ['bar', 'baz'],
 		subnamepartsjoined => 'bar_baz',
-		subnamepartspath   => catfile('bar', 'baz'),
+		subnamepartspath   => catdir('bar', 'baz'),
 	}, 'variables ok');
 }
 
