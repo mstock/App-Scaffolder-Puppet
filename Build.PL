@@ -29,7 +29,7 @@ my %module_build_args = (
     "Manfred Stock <mstock\@cpan.org>"
   ],
   "dist_name" => "App-Scaffolder-Puppet",
-  "dist_version" => "0.002000",
+  "dist_version" => "0.002001",
   "license" => "perl",
   "module_name" => "App::Scaffolder::Puppet",
   "recommends" => {},
