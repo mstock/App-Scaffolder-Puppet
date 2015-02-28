@@ -2,6 +2,8 @@ Revision history for App-Scaffolder-Puppet
 
 {{$NEXT}}
 
+ - Fix tests on Windows
+
 0.002000  2015-02-26 20:59:30 Europe/Zurich
 
  - Add 'ensure' parameter to 'package' and 'service' templates
