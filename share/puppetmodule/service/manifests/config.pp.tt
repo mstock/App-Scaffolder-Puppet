@@ -9,5 +9,5 @@
 #
 class [% name %]::config (
     $ensure = 'present',
-) {
+) inherits ::[% name %]::params {
 }

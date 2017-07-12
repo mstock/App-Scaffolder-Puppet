@@ -11,7 +11,7 @@
 class [% name %]::install (
     $ensure  = 'present',
     $package = $[% name %]::params::package,
-) {
+) inherits ::[% name %]::params {
     if $package {
         package {
             $package:
