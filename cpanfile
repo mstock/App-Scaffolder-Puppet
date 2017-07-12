@@ -13,7 +13,7 @@ on 'build' => sub {
 
 on 'test' => sub {
   requires "App::Cmd::Tester" => "0";
-  requires "App::Scaffolder" => "0";
+  requires "App::Scaffolder" => "0.002000";
   requires "Carp" => "0";
   requires "Directory::Scratch" => "0";
   requires "File::Find" => "0";
@@ -24,6 +24,7 @@ on 'test' => sub {
   requires "Test::File::ShareDir" => "0";
   requires "Test::MockObject" => "0";
   requires "Test::More" => "0.88";
+  requires "lib" => "0";
 };
 
 on 'configure' => sub {
@@ -31,6 +32,10 @@ on 'configure' => sub {
 };
 
 on 'develop' => sub {
+  requires "Pod::Coverage::TrustPod" => "0";
   requires "Test::CPAN::Changes" => "0.19";
+  requires "Test::CPAN::Meta" => "0";
+  requires "Test::Pod" => "1.41";
+  requires "Test::Pod::Coverage" => "1.08";
   requires "version" => "0.9901";
 };
