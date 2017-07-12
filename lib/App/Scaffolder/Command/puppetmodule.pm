@@ -1,4 +1,5 @@
 package App::Scaffolder::Command::puppetmodule;
+
 use parent qw(App::Scaffolder::Puppet::Command);
 
 # ABSTRACT: Scaffold a Puppet module

@@ -1,4 +1,5 @@
 package App::Scaffolder::Puppet::Command;
+
 use parent qw(App::Scaffolder::Command);
 
 # ABSTRACT: Base class for App::Scaffolder::Puppet commands
