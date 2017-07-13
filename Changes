@@ -2,6 +2,11 @@ Revision history for App-Scaffolder-Puppet
 
 {{$NEXT}}
 
+ - Remove explicit hiera() calls, they are not required by current Puppet
+   versions anymore.
+ - Inherit from the parameter class in all sub-classes. Should make it a little
+   easier to reuse them in another setting.
+
 0.002001  2015-02-28 14:35:04 Europe/Zurich
 
  - Fix tests on Windows
