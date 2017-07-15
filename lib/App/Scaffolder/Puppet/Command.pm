@@ -62,10 +62,10 @@ sub get_variables {
 		name               => scalar $opt->name(),
 		nameparts          => \@name_parts,
 		namepartsjoined    => join('_', @name_parts),
-		namepartspath      => catdir(@name_parts),
+		namepartspath      => catdir(@name_parts) || '',
 		subnameparts       => \@subname_parts,
 		subnamepartsjoined => join('_', @subname_parts),
-		subnamepartspath   => catdir(@subname_parts),
+		subnamepartspath   => catdir(@subname_parts) || '',
 		package            => $package,
 	};
 }
