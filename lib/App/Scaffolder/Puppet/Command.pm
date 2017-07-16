@@ -1,5 +1,5 @@
 package App::Scaffolder::Puppet::Command;
-$App::Scaffolder::Puppet::Command::VERSION = '0.003000';
+$App::Scaffolder::Puppet::Command::VERSION = '0.003001';
 use parent qw(App::Scaffolder::Command);
 
 # ABSTRACT: Base class for App::Scaffolder::Puppet commands
@@ -34,10 +34,10 @@ sub get_variables {
 		name               => scalar $opt->name(),
 		nameparts          => \@name_parts,
 		namepartsjoined    => join('_', @name_parts),
-		namepartspath      => catdir(@name_parts),
+		namepartspath      => catdir(@name_parts) || '',
 		subnameparts       => \@subname_parts,
 		subnamepartsjoined => join('_', @subname_parts),
-		subnamepartspath   => catdir(@subname_parts),
+		subnamepartspath   => catdir(@subname_parts) || '',
 		package            => $package,
 	};
 }
@@ -102,7 +102,7 @@ App::Scaffolder::Puppet::Command - Base class for App::Scaffolder::Puppet comman
 
 =head1 VERSION
 
-version 0.003000
+version 0.003001
 
 =head1 SYNOPSIS
 

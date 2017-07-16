@@ -40,4 +40,4 @@ requires:
   warnings: '0'
 resources:
   repository: git://github.com/mstock/App-Scaffolder-Puppet.git
-version: '0.003000'
+version: '0.003001'

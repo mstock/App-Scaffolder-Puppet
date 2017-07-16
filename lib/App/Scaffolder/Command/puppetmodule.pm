@@ -1,5 +1,5 @@
 package App::Scaffolder::Command::puppetmodule;
-$App::Scaffolder::Command::puppetmodule::VERSION = '0.003000';
+$App::Scaffolder::Command::puppetmodule::VERSION = '0.003001';
 use parent qw(App::Scaffolder::Puppet::Command);
 
 # ABSTRACT: Scaffold a Puppet module
@@ -22,7 +22,7 @@ App::Scaffolder::Command::puppetmodule - Scaffold a Puppet module
 
 =head1 VERSION
 
-version 0.003000
+version 0.003001
 
 =head1 SYNOPSIS
 

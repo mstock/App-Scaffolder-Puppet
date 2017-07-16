@@ -1,5 +1,5 @@
 package App::Scaffolder::Puppet;
-$App::Scaffolder::Puppet::VERSION = '0.003000';
+$App::Scaffolder::Puppet::VERSION = '0.003001';
 # ABSTRACT: App::Scaffolder extension to scaffold Puppet modules
 
 use strict;
@@ -20,7 +20,7 @@ App::Scaffolder::Puppet - App::Scaffolder extension to scaffold Puppet modules
 
 =head1 VERSION
 
-version 0.003000
+version 0.003001
 
 =head1 DESCRIPTION
 
