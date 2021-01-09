@@ -1,14 +1,12 @@
 #
-# = Class: [% name %]
+# @summary Class to install [% package %].
 #
-# Class to install [% package %].
-#
-# == Parameters
-# <tt>ensure</tt>:: Ensure parameter to ensure that [% package %] is either
-#                   <code>present</code> or <code>absent</code>.
-# <tt>package</tt>:: Name of the package that provides [% package %]. If
-#                    <code>false</code>, no package installation will be
-#                    attempted.
+# @param ensure
+#   Ensure parameter to ensure that [% package %] is either
+#   <code>present</code> or <code>absent</code>.
+# @param package
+#   Name of the package that provides [% package %]. If
+#   <code>false</code>, no package installation will be attempted.
 #
 class [% name %] (
     Enum[present, absent] $ensure  = 'present',
