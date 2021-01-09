@@ -11,8 +11,8 @@
 #                    attempted.
 #
 class [% name %] (
-    $ensure  = 'present',
-    $package = $[% name %]::params::package,
+    Enum[present, absent] $ensure  = 'present',
+    Variant[String, Boolean] $package = $[% name %]::params::package,
 ) inherits ::[% name %]::params {
     class {
         '::[% name %]::install':

@@ -9,8 +9,8 @@
 # <tt>package</tt>:: Name of the package.
 #
 class [% name %]::install (
-    $ensure  = 'present',
-    $package = $[% nameparts.0 %]::params::[% subnamepartsjoined %]_package,
+    Enum[present, absent] $ensure  = 'present',
+    Variant[String, Boolean] $package = $[% nameparts.0 %]::params::[% subnamepartsjoined %]_package,
 ) inherits ::[% nameparts.0 %]::params {
     if $package {
         package {

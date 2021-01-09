@@ -2,6 +2,8 @@ Revision history for App-Scaffolder-Puppet
 
 {{$NEXT}}
 
+ - Add type annotations to the parameters of the generated classes.
+
 0.003001  2017-07-16 17:08:04+02:00 Europe/Zurich
 
  - Add workaround for catdir() behaviour difference between Cygwin and Unix.
