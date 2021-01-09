@@ -1,5 +1,5 @@
 #
-# @summary Parameter class for [% name %].
+# @summary Parameter class for [% package %].
 #
 class [% name %]::params {
     $package = '[% package %]'

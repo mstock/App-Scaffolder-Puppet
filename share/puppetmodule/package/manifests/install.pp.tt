@@ -1,5 +1,5 @@
 #
-# @summary Class to install [% name %].
+# @summary Class to install [% package %].
 #
 # @param ensure
 #   Ensure that the package is either <code>present</code> or
